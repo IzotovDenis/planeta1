@@ -1,0 +1,23 @@
+development:
+ ignore_chars: "(, )"
+ charset_table: "0..9, U+410..U+42F->U+430..U+44F, U+430..U+44F, A->U+430,a->U+430, B->U+432, b->U+432, C->U+441, c->U+441, D->d, d, E->U+435, e->U+435, F->f, f, G->g, g, H->U+43d, h->U+43D, I->i, i, J->j, j, K->U+43A, k->U+43A, L->l, l, M->U+43C, m->U+43C, N->n, n, O->U+43E, o->U+43E, P->U+440, p->U+440, Q->q, q, R->r, r, S->s, s, T->U+442, t->U+442, U->u, u, V->v, v, W->w, w, X->U+445, x->U+445, Y->y, y, Z->z, z"
+ min_infix_len: 1
+ enable_star: 1	
+ morphology: "stem_ru"
+ wordforms: "config/wordforms.txt"
+ stopwords: "config/stopwords.txt"
+ item_oem_core:
+  ignore_chars: "(, )"
+
+production:
+ ignore_chars: "(, )"
+ charset_table: "0..9, U+410..U+42F->U+430..U+44F, U+430..U+44F, A->U+430,a->U+430, B->U+432, b->U+432, C->U+441, c->U+441, D->d, d, E->U+435, e->U+435, F->f, f, G->g, g, H->U+43d, h->U+43D, I->i, i, J->j, j, K->U+43A, k->U+43A, L->l, l, M->U+43C, m->U+43C, N->n, n, O->U+43E, o->U+43E, P->U+440, p->U+440, Q->q, q, R->r, r, S->s, s, T->U+442, t->U+442, U->u, u, V->v, v, W->w, w, X->U+445, x->U+445, Y->y, y, Z->z, z"
+ min_infix_len: 1
+ enable_star: 1
+ morphology: "stem_ru"
+ wordforms: "config/wordforms.txt"
+ stopwords: "config/stopwords.txt"
+ pid_file: "config/sphinx/tmp/searchd.pid"
+ indices_location: "config/sphinx/db/sphinx"
+ configuration_file: "config/sphinx/production.sphinx.conf"
+ binlog_path: "config/sphinx/binlog"

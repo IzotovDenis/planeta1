@@ -1,0 +1,45 @@
+ru:
+ title: Планета-Авто автотовары оптом
+ order_mail_title: Заказ с сайта №
+ recaptcha:
+  errors:
+   verification_failed: 'Нажмите на "Я НЕ РОБОТ"'
+ activerecord:
+  attributes:
+   user:
+    password: Пароль
+  errors:
+   models:
+    user:
+     attributes:
+      email:
+        blank: Не указан email
+        taken: Клиент с таким email уже зарегистрирован.
+      password:
+        blank: Не указан пароль (минимум 6 символов)
+      inn:
+        blank: Не указан ИНН
+        taken: Клиент с таким ИНН уже зарегистрирован.
+      ogrn:
+        blank: Не указан ОГРН
+      password_confirmation:
+        confirmation: Подтвержение пароля введено неверно
+      password:
+        too_short: Короткий пароль ( минимум 6 символов )
+        blank: Не указан пароль
+        invalid: Неправильно введен пароль
+        empty: Не указан новый пароль (минимум 6 символов)
+      person:
+        blank: Не указано контактное лицо
+      city:
+        blank: Не указан город
+      name:
+        blank: Не указано юридическое название компании
+      legal_address: 
+        blank: Не указан юридический адрес компании
+      actual_address: 
+        blank: Не указан фактический адрес компании
+      phone:
+        blank: Не указан телефон
+     password_recovery:
+      email: Неверно указан или не найден email

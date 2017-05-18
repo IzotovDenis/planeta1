@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  formed: 1
+  comment: MyString
+  total: 1.5
+  order_list: 
+
+two:
+  user_id: 1
+  formed: 1
+  comment: MyString
+  total: 1.5
+  order_list: 
