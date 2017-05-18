@@ -96,7 +96,7 @@ namespace :deploy do
       execute "ln -s #{shared_path}/Procfile #{release_path}/Procfile"
       execute "ln -s #{shared_path}/sys #{release_path}/public/sys"
       execute "ln -s /home/deployer/uploads #{release_path}/public/uploads"
-      execute "ln -s /home/deployer/imports #{releases_path}/imports"
+      execute "ln -s /home/deployer/imports #{release_path}/imports"
       execute "ln -s /home/deployer/apps/#{application}/run #{release_path}/run"
       execute "ln -s #{shared_path}/config/sphinx #{release_path}/config/sphinx"
 
