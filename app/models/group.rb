@@ -1,6 +1,7 @@
 class Group < ApplicationRecord
     has_ancestry
     has_many :items
+    before_save :set_site_title
     scope :with_new_items, -> { joins(:items).select('MAX(items.created_at) AS item_created_at, groups.*').group('groups.id').order("item_created_at ASC") }
 	  scope :able, ->{ where(disabled: [false,nil]).order('title') }
     scope :disableded, -> {where(disabled: true)}
@@ -43,7 +44,7 @@ class Group < ApplicationRecord
   end
 
   def set_site_title
-    self.site_title = self.title.gsub(/^(\d*\.)/, '').strip
+      self.site_title = self.title.gsub(/^(\d*\.)/, '').strip
   end
 
 end

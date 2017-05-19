@@ -29,7 +29,7 @@ module Planeta
     config.middleware.use ActionDispatch::Session::CookieStore
     config.middleware.use ActionDispatch::Flash
     config.api_only = true
-    config.autoload_paths += %W(#{config.root}/app/lib)
+    config.autoload_paths << Rails.root.join('lib')
     config.autoload_paths += %W(#{config.root}/app/workers)
     config.action_dispatch.default_headers.merge!({
       'Access-Control-Allow-Origin' => '*',

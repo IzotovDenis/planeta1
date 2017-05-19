@@ -5,7 +5,7 @@ class SetGroupAndSortItemsWorker
   def perform(importsession_id)
 	ImportCommands.set_group(importsession_id)
 	ImportCommands.sort_items
-	Group.set_new_item_time
+	GroupsCommands.set_new_item_time
   end
 
 end
