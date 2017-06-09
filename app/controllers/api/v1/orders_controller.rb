@@ -71,6 +71,7 @@ class Api::V1::OrdersController < Api::V1Controller
         if @order.has_items?
             @order.comment = params[:comment]
             if @order.complete
+                ForwardingWorker.perform_async(@order.id)
                 render :json => {status: "success", order: @order}
             end 
         else

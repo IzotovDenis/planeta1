@@ -6,7 +6,7 @@ class Api::V1::GroupsController < Api::V1Controller
     after_action :set_activity, only: [:index, :show]
 
     def index
-        @groups = Group.select("site_title as title, id, ancestry, CASE WHEN (extract(epoch from last_new_item)+1209600) > (extract(epoch from now())) THEN true ELSE false END AS new, items_count").all.index_by(&:id)
+        @groups = Group.select("site_title as title, id, ancestry, supplier_id, CASE WHEN (extract(epoch from last_new_item)+1209600) > (extract(epoch from now())) THEN true ELSE false END AS new, items_count").all.index_by(&:id)
         @sort = Group.select("ancestry, id, menu_columns").able.arrange_serializable(:order=>:title) do |parent, children|
             h = {id: parent.id}
             if children
@@ -26,7 +26,8 @@ class Api::V1::GroupsController < Api::V1Controller
         query += " AND items.qty > 0" if params[:only_in_stock] == 'true'
         query += " AND items.created_at > '#{DateTime.now-7.days}'" if params[:only_new] == 'true'
         render json: {  group: @group, 
-                        items: Item.where(query).pg_result(false,can_view_qty?,price_type)
+                        items: Item.where(query).page(params[:page]).pg_result(false,can_view_qty?,price_type),
+                        total_entries: Item.where(query).count
                     }
     end
     

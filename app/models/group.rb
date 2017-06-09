@@ -44,7 +44,7 @@ class Group < ApplicationRecord
   end
 
   def set_site_title
-      self.site_title = self.title.gsub(/^(\d*\.)/, '').strip
+      self.site_title = self.title.gsub(/^(\d*\.)*/, '').strip
   end
 
 end

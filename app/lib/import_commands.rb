@@ -38,7 +38,7 @@ class ImportCommands
             item['title'] = item_tag(tag["Наименование"])
             item['certificate'] = item_tag(tag["СсылкаНаСертификат"])
             item['text'] = item_tag(tag["Описание"])
-            item['group_cid'] = item_tag(tag["Группы"]["Ид"])
+            item['group_cid'] = item_tag(tag["Группы"]["Ид"]) if tag["Группы"]
             item['cross'] = item_cross(tag["Кросс1"], tag["Кросс2"])
             item['properties'] = item_properties(tag["ЗначенияРеквизитов"])
             item['properties']['Применяемость'] = item_tag(tag["Применяемость"]) if tag["Применяемость"]

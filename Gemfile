@@ -64,11 +64,13 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'devise', github: 'plataformatec/devise'
 gem 'erubis'
 gem 'carrierwave'
+gem 'russian'
 gem 'mini_magick'
 gem 'sinatra', :require => nil
 gem "sidekiq-status"
 gem 'foreman'
 gem 'whenever', :require => false
+gem 'slim'
 
 group :development do
   gem 'capistrano', 		require: false
