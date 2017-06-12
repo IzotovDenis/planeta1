@@ -6,7 +6,6 @@ class User < ApplicationRecord
   has_many :auth_tokens
   has_many :orders
   has_many :activities
-  has_secure_password
 
   validates :inn,
   :uniqueness => {
