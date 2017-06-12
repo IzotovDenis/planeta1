@@ -32,7 +32,7 @@ class Api::V1::UsersController < Api::V1Controller
     end
 
     def sign_up
-        @user = User.create(user_params)
+        @user = User.new(user_params)
         if @user.save
             token = AuthCommands.generate_token(@user.id)
             render json: {success: true, token: token.val, user: @user} 
